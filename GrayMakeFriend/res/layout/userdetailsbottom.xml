@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/lllayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        android:orientation="horizontal" >
+		<!-- 111111 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/guide_round"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btncare"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/careyou"
+                android:text="@string/carefriend" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/guide_round"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnsixin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sayhello"
+                android:text="@string/sendmessage" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

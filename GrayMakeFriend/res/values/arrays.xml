@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="date">
+    <item>年</item>
+      <item>月</item>
+      <item>日</item>
+ </string-array>
+     <string-array name="marital">
+    <item>未婚</item>
+      <item>离异</item>
+ </string-array>
+      <string-array name="gender">
+    <item>保密</item>
+      <item>男性</item>
+      <item>女性</item>
+ </string-array>
+      <string-array name="education">
+    <item>博士</item>
+      <item>硕士</item>
+        <item>本科</item>
+          <item>专科</item>
+            <item>高中</item>
+              <item>初中</item>
+ </string-array>
+       <string-array name="drinkorno">
+    <item>酗酒</item>
+    <item>喝酒</item>
+      <item>滴酒不沾</item>
+ </string-array>
+       <string-array name="smokeorno">
+    <item>吸烟</item>
+      <item>不吸</item>
+ </string-array>
+      <string-array name="language">
+    <item>简体中文</item>
+      <item>English</item>
+        <item>Tibetan</item>
+ </string-array>
+</resources>

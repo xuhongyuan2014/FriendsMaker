@@ -1,0 +1,256 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ListUserDetailsActivity" >
+
+    <!--  用户资料标题-->
+
+    <LinearLayout
+        android:id="@+id/layoutsx"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/usersixintitle" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewsx"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.04"
+        android:background="@color/whitesmoke" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+             
+            		 <RelativeLayout
+            		     android:layout_width="match_parent"
+            		     android:layout_height="120dp"
+            		     android:orientation="vertical" >
+		
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginLeft="28dp"
+		            android:layout_marginTop="20dp"
+		            android:layout_toRightOf="@+id/imageViewsx"
+		            android:orientation="vertical" >
+		
+		            <TextView
+		                android:id="@+id/sxusername"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="秋风萧瑟" />
+		            
+		            <TextView
+		                android:id="@+id/sxbaseinfo"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="" />
+		            
+		            <TextView
+		                android:id="@+id/sxplace"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="湖北武汉江夏区" />
+		            
+		        </LinearLayout>
+
+		        <ImageView
+
+		            android:id="@+id/imageViewsx"
+		            android:layout_width="160dip"
+		            android:layout_height="160dip"
+		            android:layout_alignParentLeft="true"
+		            android:layout_centerVertical="true"
+		            android:layout_marginLeft="14dp"
+		            android:contentDescription="userImage"
+		            android:src="@drawable/icon" />
+		
+		    </RelativeLayout>
+		
+           <!-- 主题 --> 		 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/theme1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sharp_corner_row"
+                        android:text="@string/theme"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/linearLayout3"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/sxtheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sharp_corner_row"
+                        android:text="交个朋友"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+            
+            <!-- 发送时间 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lineratime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/sxtime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sharp_corner_row"
+                        android:text="@string/sendtime"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                
+                
+                 <LinearLayout
+                    android:id = "@+id/linearLayoutxs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/lineratime"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/sxsendtime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sharp_corner_row"
+                        android:text="2015-03-03 13:00:40"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+                
+               
+                
+
+            </RelativeLayout>
+            
+            
+            <!-- 私信内容 -->		 
+		    <RelativeLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:orientation="vertical" >
+
+		        <LinearLayout
+		            android:id="@+id/linearLayoutsx1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentLeft="true"
+		            android:layout_alignParentTop="true"
+		            android:orientation="vertical" >
+
+		            <TextView
+		                android:id="@+id/sxcontent1"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:background="@drawable/sharp_corner_row"
+		                android:text="@string/messagecontent"
+		                android:textColor="@color/black" />
+		        </LinearLayout>
+		      
+				        <LinearLayout
+				            android:layout_width="match_parent"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentTop="true"
+				            android:layout_toRightOf="@+id/linearLayoutsx1"
+				            android:orientation="vertical" >
+		
+				            
+				            <ScrollView
+					            android:id="@+id/scrollViewsx2"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content" >
+			
+					            <LinearLayout
+					                android:layout_width="match_parent"
+					                android:layout_height="match_parent"
+					                android:orientation="vertical" >
+
+					                		 <TextView
+					                		     android:id="@+id/sxcontent"
+					                		     android:layout_width="match_parent"
+					                		     android:layout_height="match_parent"
+					                		     android:background="@drawable/sharp_corner_row"
+					                		     android:text=""
+					                		     android:textColor="@color/black" />
+
+					            </LinearLayout>
+					        </ScrollView>
+				           
+				        </LinearLayout>
+
+		    </RelativeLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutreply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sharp_corner_row"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/buttonadd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/careyou"
+            android:text="@string/makefriends" />
+
+        <Button
+            android:id="@+id/buttonrep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/careyou"
+            android:text="@string/replymessage" />
+    </LinearLayout>
+    
+</LinearLayout>

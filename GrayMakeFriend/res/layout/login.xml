@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/userInfo_mainlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_marginTop="3dp"
+    android:background="@color/background_gray"
+    android:clickable="true"
+    android:longClickable="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/llayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lllayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_purple"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/guide_round"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/liaotian"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:gravity="center"
+                    android:padding="10dip"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_size" />
+
+                <ImageView
+                    android:id="@+id/btnQuit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/__close" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/tablerow_margin_bottom" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:text="@string/username"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/ET_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/tablerow_margin_bottom"
+                android:layout_weight="8"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:text="@string/password"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/ET_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/tablerow_margin_bottom"
+                android:layout_weight="8"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tablerow_margin_bottom"
+        android:background="@drawable/bg_table_single_item_selected"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@color/text_field_color" />
+
+    <TextView
+        android:id="@+id/register_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_table_single_item_selected"
+        android:gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/text_field_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/CB_rememberme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/rememberme"
+            android:textColor="@color/text_field_color" />
+
+        <CheckBox
+            android:id="@+id/CB_autologin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:text="@string/autologin"
+            android:textColor="@color/text_field_color" />
+
+    </LinearLayout>
+
+</LinearLayout>

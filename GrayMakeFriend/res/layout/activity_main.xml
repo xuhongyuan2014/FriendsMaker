@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:id="@+id/llayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <include layout="@layout/top1" />
+
+    </LinearLayout>
+
+    <com.example.mfriends.MyScrollLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layoutbottom"
+        android:layout_below="@id/llayout" >
+
+		<!-- 用户 -->
+        <FrameLayout
+            android:id="@+id/refreshable_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" >
+	            <ListView
+	                android:id="@+id/listViewUsers"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:cacheColorHint="@android:color/transparent"
+	                android:divider="@drawable/reader_item_divider"
+	                android:listSelector="@android:color/transparent" >
+	            </ListView>
+        </FrameLayout>
+        
+        
+		<!-- 私信 -->
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" >
+
+             <ListView
+                android:id="@+id/listViewSiXin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@drawable/reader_item_divider"
+                android:listSelector="@android:color/transparent" >
+            </ListView>
+        </FrameLayout>
+        
+        
+		<!-- 我的关注，我关注的好友 -->
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" >
+
+            <ListView
+                android:id="@+id/listViewMyCare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@drawable/reader_item_divider"
+                android:listSelector="@android:color/transparent" >
+            </ListView>
+        </FrameLayout>
+        
+        <!-- 个人中心 -->
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" >
+            <include layout="@layout/individualcenter" />
+
+        </FrameLayout>
+    </com.example.mfriends.MyScrollLayout>
+    
+    
+    <!-- 菜单选择项 -->
+ 	<LinearLayout
+        android:id="@+id/layoutbottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <include layout="@layout/bottom" />
+    </LinearLayout>
+
+</RelativeLayout>

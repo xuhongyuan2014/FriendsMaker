@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/lllayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        android:orientation="horizontal" >
+		<!-- 111111 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/guide_round"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageusers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/_love_" />
+
+            <TextView
+                android:id="@+id/allusers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dip"
+                android:text="@string/user"
+                android:textColor="@color/green"
+                android:textSize="15dip" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/guide_round"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:saveEnabled="false" >
+			 <ImageView
+                android:id="@+id/imagepermessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/_love_" />
+
+            <TextView
+                android:id="@+id/permessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dip"
+                android:text="@string/messages"
+                android:textColor="@color/black"
+                android:textSize="15dip" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/guide_round"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+             <ImageView
+                android:id="@+id/imagemycare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/_love_" />
+
+            <TextView
+                android:id="@+id/mycare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dip"
+                android:text="@string/myconcern"
+                android:textColor="@color/black"
+                android:textSize="15dip" />
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/guide_round"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+             <ImageView
+                android:id="@+id/imagemyself"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/_love_" />
+
+            <TextView
+                android:id="@+id/myself"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dip"
+                android:text="@string/me"
+                android:textColor="@color/black"
+                android:textSize="15dip" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

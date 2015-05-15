@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/userInfo_mainlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="3dp"
+    android:clickable="true"
+    android:longClickable="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/llayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lllayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_purple"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/guide_round"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/back_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
+                    android:text="@string/back"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/liaotian"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:gravity="center"
+                    android:padding="10dip"
+                    android:text="@string/systemconfig"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:id="@+id/save_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/save"
+                    android:textColor="@color/background_purple"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/background_gray" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:scrollbars="vertical" >
+
+                <TableRow
+                    android:id="@+id/TableRowPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:background="@drawable/sharp_corner_row"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/TextView06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/accountpassword"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <TextView
+                        android:id="@+id/TV_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_field_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRowLanguage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:background="@drawable/sharp_corner_row"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/TextView02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/chooselanguage"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <TextView
+                        android:id="@+id/TV_language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_field_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRowAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:background="@drawable/sharp_corner_row"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/abountus"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <TextView
+                        android:id="@+id/TV_about"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_field_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRowComeFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/mm_title_btn_pressed"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/changeaccount_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="@string/changeaccount"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

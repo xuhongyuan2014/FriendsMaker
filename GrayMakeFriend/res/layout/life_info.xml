@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/userInfo_mainlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="3dp"
+    android:clickable="true"
+    android:longClickable="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/llayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lllayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_purple"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/guide_round"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/back_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
+                    android:text="@string/back"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/liaotian"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:gravity="center"
+                    android:padding="10dip"
+                    android:text="@string/dailylife"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:id="@+id/save_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1.5"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/background_gray" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:scrollbars="vertical" >
+
+                <TableRow
+                    android:id="@+id/TableRowDrink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:background="@drawable/sharp_corner_row"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/TextView06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/drinkorno"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <TextView
+                        android:id="@+id/TV_drink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_field_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/tablerow_margin_bottom"
+                        android:layout_weight="1"
+                        android:src="@drawable/direction_guide" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRowSmoke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:background="@drawable/sharp_corner_row"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/smokeorno"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <TextView
+                        android:id="@+id/TV_smoke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_field_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <ImageView
+                        android:id="@+id/ImageView01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/tablerow_margin_bottom"
+                        android:layout_weight="1"
+                        android:src="@drawable/direction_guide" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRowHouse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:background="@drawable/sharp_corner_row"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/housework"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <TextView
+                        android:id="@+id/TV_house"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_field_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <ImageView
+                        android:id="@+id/ImageView02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/tablerow_margin_bottom"
+                        android:layout_weight="1"
+                        android:src="@drawable/direction_guide" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TableRowCook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/tablerow_margin_bottom"
+                    android:background="@drawable/sharp_corner_row"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/TextView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/cooking"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <TextView
+                        android:id="@+id/TV_cook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/text_field_color"
+                        android:textSize="@dimen/tablerow_text_size" />
+
+                    <ImageView
+                        android:id="@+id/ImageView03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/tablerow_margin_bottom"
+                        android:layout_weight="1"
+                        android:src="@drawable/direction_guide" />
+
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

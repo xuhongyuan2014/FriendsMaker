@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="date">
+    <item>Year</item>
+      <item>Month</item>
+      <item>Day</item>
+ </string-array>
+     <string-array name="marital">
+    <item>unmarried</item>
+      <item>divorced</item>
+ </string-array>
+      <string-array name="gender">
+    <item>secret</item>
+      <item>female</item>
+      <item>man</item>
+ </string-array>
+      <string-array name="education">
+    <item>Dr.</item>
+      <item>Postgraduate degree</item>
+        <item>Undergraduate Education </item>
+          <item>College degree</item>
+            <item>High school</item>
+              <item>Junior high school</item>
+ </string-array>
+        <string-array name="drinkorno">
+    <item>heavy</item>
+    <item>little</item>
+      <item>no</item>
+ </string-array>
+       <string-array name="smokeorno">
+    <item>smoke</item>
+      <item>no</item>
+       </string-array>
+      <string-array name="language">
+    <item>简体中文</item>
+      <item>English</item>
+        <item>Tibetan</item>
+ </string-array>
+</resources>
