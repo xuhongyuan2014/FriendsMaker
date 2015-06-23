@@ -3,6 +3,8 @@ package com.example.utils;
 import com.example.model.UserInfo;
 
 public class Constant {
+	public static boolean Debug=true;
+	
 	public static String UserId;
 	
 	public static String tokenId;

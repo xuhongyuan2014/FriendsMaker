@@ -296,6 +296,13 @@ public class LoginActivity extends Activity {
 			    }						
 			     @Override
 	             public void onFailure(Throwable error) {
+			    	 if(Constant.Debug){
+			    		 Constant.UserId="007";
+			    		 //Ìø×ª½çÃæ  
+ 	                    Intent intent = new Intent(LoginActivity.this,MainTabActivity.class);  
+ 	                    finish();
+ 	                    LoginActivity.this.startActivity(intent);  
+			    	 }
 	                     error.printStackTrace();
 	                    Toast.makeText(LoginActivity.this, getResources().getString(R.string.timeout),Toast.LENGTH_SHORT).show();
 	             }

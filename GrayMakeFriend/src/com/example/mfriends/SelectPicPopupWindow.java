@@ -239,6 +239,12 @@ public class SelectPicPopupWindow extends PopupWindow{
 			
 		     @Override
              public void onFailure(Throwable error) {
+		    	 if(Constant.Debug){
+						userinfo.setUsername("mrxu");	
+						userinfo.setEmail("mrxu@163.com");
+						userinfo.setIntro("个人简介");
+						userinfo.setUserImg("");
+		    	 }
 		    	// 关闭进度条
 					//ProgressDialogUtils.dismissProgressDialog();
                      error.printStackTrace();

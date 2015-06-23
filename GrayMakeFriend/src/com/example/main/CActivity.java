@@ -30,185 +30,207 @@ import android.widget.TextView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class CActivity extends Activity{
+public class CActivity extends Activity {
 
 	private ListView listview1;
 	/*
-	 * ÎÒ¹Ø×¢µÄºÃÓÑ
+	 * ï¿½Ò¹ï¿½×¢ï¿½Äºï¿½ï¿½ï¿½
 	 */
 	private int pageNumCF = 1;
 	private int pageSizeCF = 10;
 	private boolean isLastPageCF = true;
 	private CareFriendsAdapter hcAdapter;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-	/*	TextView tv = new TextView(this);
-		tv.setText("This is C Activity!");
-		tv.setGravity(Gravity.CENTER);*/
+
+		/*
+		 * TextView tv = new TextView(this); tv.setText("This is C Activity!");
+		 * tv.setGravity(Gravity.CENTER);
+		 */
 		setContentView(R.layout.menu_list);
-		
-		 IntentFilter intentFilter = new IntentFilter();  
-		 intentFilter.addAction("action.refresh");  
-	      intentFilter.addAction("action.refreshFriends");  
-	      registerReceiver(mRefreshBroadcastReceiver, intentFilter); 
-		
-		listview1=(ListView) findViewById(R.id.listView1);
-		
-		
-		
-		
-		
+
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction("action.refresh");
+		intentFilter.addAction("action.refreshFriends");
+		registerReceiver(mRefreshBroadcastReceiver, intentFilter);
+
+		listview1 = (ListView) findViewById(R.id.listView1);
+
 		ArrayList<CareFriendsP> cfli = new ArrayList<CareFriendsP>();
-		hcAdapter = new CareFriendsAdapter(this, cfli);//³õÊ¼»¯ÊÊÅäÆ÷£¬ÕâÀï³õÊ¼»¯Ìî³ä¿ÕÊý¾Ý¸øÊÊÅäÆ÷£¬µ±ºóÃæÓÐÊý¾ÝÌî³ä£¬ÌáÊ¾Êý¾Ý
-		
+		hcAdapter = new CareFriendsAdapter(this, cfli);// ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä£¬ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½
+
 		listview1.setAdapter(hcAdapter);
 		listview1.setCacheColorHint(0);
 
-		//reloadThreadCareFriends();
+		// reloadThreadCareFriends();
 		startMyCarePart();
-		
+
 		listview1.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> adapter, View view, int position,
-					long id) {
+			public void onItemClick(AdapterView<?> adapter, View view,
+					int position, long id) {
 				// TODO Auto-generated method stub
-			
-				//Ìø×ªµ½ÁíÍâÒ»¸ö½çÃæ£¨¸öÈËÓÃ»§µÄÏêÏ¸ÐÅÏ¢½çÃæ£©
-				CareFriendsP cfp=(CareFriendsP) listview1.getItemAtPosition(position);
-				
-				Intent intent = new Intent(CActivity.this, ListUserDetailsActivity.class);
-				
+
+				// ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½æ£¨ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½æ£©
+				CareFriendsP cfp = (CareFriendsP) listview1
+						.getItemAtPosition(position);
+
+				Intent intent = new Intent(CActivity.this,
+						ListUserDetailsActivity.class);
+
 				intent.putExtra("id", String.valueOf(Constant.getUserId()));
 				intent.putExtra("friendid", String.valueOf(cfp.getId()));
-				intent.putExtra("username",String.valueOf(cfp.getUsername()));
+				intent.putExtra("username", String.valueOf(cfp.getUsername()));
 				startActivity(intent);
-			
-				
+
 			}
 		});
-	
+
 		listview1.setOnScrollListener(new OnScrollListener() {
 			@Override
 			public void onScrollStateChanged(AbsListView arg0, int arg1) {
 			}
-			
-			@Override
-			public void onScroll(AbsListView arg0, int firstVisibleItem, int visibleItemCount, int totalItemCount) { 
-				 int lastItemid = listview1.getLastVisiblePosition();
-				 //pageNowValue=pageNowValue+1;
-				 //·çÅÐ¶Ïµ½×îºóÒ»ÌõÊý¾ÝµÄÊ±ºò£¬²¢ÇÒ²»ÊÇ×îºóÒ»Ò³£¬Ôò¼ÌÐø¼ÓÔØÊý¾Ý
-				if ((lastItemid + 1) == totalItemCount && !isLastPageCF) {  							
-					startMyCarePart();
-	            }
-				
-			}
-	   });
-	}
-	
-	
-	
-	
-	
-	
-	private void startMyCarePart()
-	{
-		
-		//ÕâÀïÊÇÒ»´ÎÐèÒª»ñÈ¡¶àÉÙÌõÊý¾Ý
-		
-		final RequestParams  para= new RequestParams();
-		para.add("id",Constant.getUserId());
-		para.add("pageNow", (pageNumCF++)+"");
-		para.add("pageSize", pageSizeCF+"");
-		//·ÃÎÊ·þÎñÆ÷
-		HttpEngine.getHttpEngine().post(Constant.getUserCareList, para, new AsyncHttpResponseHandler(){
-			
-			@Override
-		    public void onSuccess(String result) {
-				 if (result != null) {
 
-					 List<CareFriendsP> cfList= JSONUtils.jsonToEntityArray(result,CareFriendsP.class);
-					    
-					 if(cfList!=null)
-					 {
-					 	if(cfList.size()<pageSizeCF) isLastPageCF = true;
-					 	else isLastPageCF = false;
-					 	
-					 	
-					 	if(cfList.size()>0)
-					 	{
-					 	/*	cfDataList=getCFList(cfList);
-					 		 Message msg = new Message();  
-			                    msg.what = 301;   
-			                    handler.sendMessage(msg);  */
-			                    
-					 		hcAdapter.addList(getCFList(cfList));
-					 		if(hcAdapter!=null){
-					 			hcAdapter.notifyDataSetChanged();
-					 		}
-					 		
-					 	}
-					 	
-					 }
-					} else {
-						//Toast.makeText(MainActivity.this, "»ñÈ¡Êý¾Ý´íÎó",Toast.LENGTH_SHORT).show();
-					}
-				
-		    }
-			
+			@Override
+			public void onScroll(AbsListView arg0, int firstVisibleItem,
+					int visibleItemCount, int totalItemCount) {
+				int lastItemid = listview1.getLastVisiblePosition();
+				// pageNowValue=pageNowValue+1;
+				// ï¿½ï¿½ï¿½Ð¶Ïµï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ýµï¿½Ê±ï¿½ò£¬²ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				if ((lastItemid + 1) == totalItemCount && !isLastPageCF) {
+					startMyCarePart();
+				}
+
+			}
 		});
-		
-	
 	}
-	
-	public ArrayList<CareFriendsP> cfDataList=new ArrayList();
+
+	private void startMyCarePart() {
+
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+		final RequestParams para = new RequestParams();
+		para.add("id", Constant.getUserId());
+		para.add("pageNow", (pageNumCF++) + "");
+		para.add("pageSize", pageSizeCF + "");
+		// ï¿½ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½
+		HttpEngine.getHttpEngine().post(Constant.getUserCareList, para,
+				new AsyncHttpResponseHandler() {
+
+					@Override
+					public void onSuccess(String result) {
+						if (result != null) {
+
+							List<CareFriendsP> cfList = JSONUtils
+									.jsonToEntityArray(result,
+											CareFriendsP.class);
+
+							if (cfList != null) {
+								if (cfList.size() < pageSizeCF)
+									isLastPageCF = true;
+								else
+									isLastPageCF = false;
+
+								if (cfList.size() > 0) {
+									/*
+									 * cfDataList=getCFList(cfList); Message msg
+									 * = new Message(); msg.what = 301;
+									 * handler.sendMessage(msg);
+									 */
+
+									hcAdapter.addList(getCFList(cfList));
+									if (hcAdapter != null) {
+										hcAdapter.notifyDataSetChanged();
+									}
+
+								}
+
+							}
+						} else {
+							// Toast.makeText(MainActivity.this,
+							// "ï¿½ï¿½È¡ï¿½ï¿½Ý´ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
+						}
+
+					}
+
+					@Override
+					public void onFailure(Throwable error) {
+						if (Constant.Debug) {
+							hcAdapter.addList(getCFListLocal());
+							if (hcAdapter != null) {
+								hcAdapter.notifyDataSetChanged();
+							}
+						}
+					}
+				});
+
+	}
+
+	public ArrayList<CareFriendsP> cfDataList = new ArrayList();
+
 	@SuppressWarnings("unused")
-	private ArrayList<CareFriendsP> getCFList(List<CareFriendsP> cfList){
+	private ArrayList<CareFriendsP> getCFList(List<CareFriendsP> cfList) {
 		ArrayList<CareFriendsP> hcList = new ArrayList<CareFriendsP>();
-		
+
 		CareFriendsP ctp = null;
-		for(int i=0;i<cfList.size();i++)
-		{
+		for (int i = 0; i < cfList.size(); i++) {
 			ctp = new CareFriendsP();
 			ctp.setId(cfList.get(i).getId());
-			if(cfList.get(i).getImage()!=null){
+			if (cfList.get(i).getImage() != null) {
 				ctp.setImage(cfList.get(i).getImage());
-			}
-			else
-			{
+			} else {
 				ctp.setImage(R.drawable.headshow2 + "");
 			}
 			ctp.setUsername(cfList.get(i).getUsername());
 			hcList.add(ctp);
-			
-		}
 
+		}
 
 		return hcList;
 	}
-	 // broadcast receiver  
-	  private BroadcastReceiver mRefreshBroadcastReceiver = new BroadcastReceiver() {  
-	  
-	      @Override  
-	      public void onReceive(Context context, Intent intent) {  
-	          String action = intent.getAction();  
-	          if (action.equals("action.refreshFriends")||action.equals("action.refresh"))  
-	          {  
-	              reFreshList();  
-	          }  
-	      }  
-	  };
-	  public void reFreshList(){
-			pageNumCF = 1;
-			pageSizeCF = 10;
-			isLastPageCF = true;
-			hcAdapter.clearList();
-			startMyCarePart();
-	  }
-	    @Override  
-	       protected void onDestroy() {  
-	           super.onDestroy();  
-	           unregisterReceiver(mRefreshBroadcastReceiver);  
-	       }  
+
+	private ArrayList<CareFriendsP> getCFListLocal() {
+		ArrayList<CareFriendsP> hcList = new ArrayList<CareFriendsP>();
+
+		CareFriendsP ctp = null;
+		for (int i = 0; i < 10; i++) {
+			ctp = new CareFriendsP();
+			ctp.setId("007");
+			ctp.setImage(R.drawable.headshow2 + "");
+			ctp.setUsername("Mrxu");
+			hcList.add(ctp);
+
+		}
+
+		return hcList;
+	}
+
+	// broadcast receiver
+	private BroadcastReceiver mRefreshBroadcastReceiver = new BroadcastReceiver() {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String action = intent.getAction();
+			if (action.equals("action.refreshFriends")
+					|| action.equals("action.refresh")) {
+				reFreshList();
+			}
+		}
+	};
+
+	public void reFreshList() {
+		pageNumCF = 1;
+		pageSizeCF = 10;
+		isLastPageCF = true;
+		hcAdapter.clearList();
+		startMyCarePart();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		unregisterReceiver(mRefreshBroadcastReceiver);
+	}
 }

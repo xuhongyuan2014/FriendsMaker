@@ -315,6 +315,12 @@ public class DActivity extends Activity implements OnUploadProcessListener{
 			
 		     @Override
              public void onFailure(Throwable error) {
+		    	 if(Constant.Debug){
+						userinfo.setUsername("mrxu");	
+						userinfo.setEmail("mrxu@163.com");
+						userinfo.setIntro("个人简介");
+						userinfo.setUserImg("");
+		    	 }
 		    	// 关闭进度条
 					//ProgressDialogUtils.dismissProgressDialog();
                      error.printStackTrace();
@@ -415,6 +421,9 @@ public class DActivity extends Activity implements OnUploadProcessListener{
 			//	Toast.makeText(DActivity.this, msg.obj.toString(),Toast.LENGTH_SHORT).show();
 			break;
 			case HandlerConstants.GET_USER_INFO_ERROR:
+				Center_TV_username.setText(userinfo.getUsername());
+			    Center_TV_email.setText(userinfo.getEmail());
+				Center_TV_intro.setText(userinfo.getIntro());
 				//Toast.makeText(MainActivity.this, msg.obj.toString(),Toast.LENGTH_SHORT).show();
 				break;
 

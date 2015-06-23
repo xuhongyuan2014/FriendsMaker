@@ -1,6 +1,7 @@
 package com.example.main;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.example.mfriends.MainActivity;
@@ -163,6 +164,12 @@ public class BActivity extends Activity{
 			
 		     @Override
              public void onFailure(Throwable error) {
+		    	 if (Constant.Debug) {
+		    		 hbAdapter.addDataList(getSiXinListLocal());
+						if (hbAdapter != null) {
+							hbAdapter.notifyDataSetChanged();
+						}
+					}
 		    	// 关闭进度条
 					//ProgressDialogUtils.dismissProgressDialog();
          /*            error.printStackTrace();
@@ -201,7 +208,31 @@ public class BActivity extends Activity{
 
 		return sList;
 	}
+	private ArrayList<MessageEntity> getSiXinListLocal() {
+		ArrayList<MessageEntity> sList = new ArrayList<MessageEntity>();
+		
+		MessageEntity ctp = null;
+		for(int i=0;i<10;i++)
+		{
+			ctp = new MessageEntity();
+			
+			ctp.setTxPath("");
+			//ctp.setName("天高云淡");
+			ctp.setId(007);
+			ctp.setUserid(007);
+			ctp.setUsername("Mrxu");
+			ctp.setSendTime(new Date());
+			ctp.setMsgContent("恭喜发财");
+			ctp.setMsgTitle("你好");
+			ctp.setMsgStatus(false);
+			ctp.setUserImg("");
+			
+			sList.add(ctp);
+			
+		}
 
+		return sList;
+	}
 	 // broadcast receiver  
 	  private BroadcastReceiver mRefreshBroadcastReceiver = new BroadcastReceiver() {  
 	  

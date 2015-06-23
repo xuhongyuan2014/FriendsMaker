@@ -285,6 +285,12 @@ public class MainTabActivity extends TabActivity implements OnCheckedChangeListe
 			
 		     @Override
              public void onFailure(Throwable error) {
+		    	 if(Constant.Debug){
+						Constant.userinfo.setUsername("mrxu");	
+						Constant.userinfo.setEmail("mrxu@163.com");
+						Constant.userinfo.setIntro("个人简介");
+						Constant.userinfo.setUserImg("");
+		    	 }
 		    	// 关闭进度条
 					//ProgressDialogUtils.dismissProgressDialog();
                      error.printStackTrace();
